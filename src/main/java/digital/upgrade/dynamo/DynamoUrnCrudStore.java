@@ -66,6 +66,8 @@ public class DynamoUrnCrudStore <T extends Message> implements CrudStore<T> {
     if (builder.hasField(urnField)) {
       return readUrn(builder);
     }
+    // if has a hash key value use
+    // table.query()
     throw new CrudException("Not implemented");
   }
 
