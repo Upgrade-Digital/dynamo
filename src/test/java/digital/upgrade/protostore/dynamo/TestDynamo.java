@@ -10,8 +10,6 @@ import com.google.protobuf.ByteString;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.UUID;
@@ -34,7 +32,7 @@ public class TestDynamo {
   DynamoUrnFieldStore<TestDynamoMessage> getStore() throws CrudException {
     Properties properties = new Properties();
     try {
-      properties.load(new FileReader(new File("aws_credentials.properties")));
+      properties.load(getClass().getResourceAsStream("aws_credentials.properties"));
     } catch (IOException e) {
       throw new CrudException("Storage configuration error, credentials not " +
           "found in aws_credentials.properties (in resources?)", e);
