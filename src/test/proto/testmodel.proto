@@ -1,0 +1,24 @@
+package digital.upgrade.protostore.dynamo;
+
+option java_package = "digital.upgrade.protostore.dynamo";
+option java_outer_classname = "TestModel";
+
+
+enum Fate {
+  TO_BE = 1;
+  NOT_TO_BE = 2;
+}
+
+message TestDynamoMessage {
+  required string urn = 1;
+  required int64 aLong = 2;
+  required int32 aInt = 3;
+  required bool aBool = 4;
+  required string aString = 5;
+  required Fate aFate = 6;
+  required float aFloat = 7;
+  required double aDouble = 8;
+  required bytes aByte = 9;
+  optional string change = 10;
+  required string secondary = 11;
+}
