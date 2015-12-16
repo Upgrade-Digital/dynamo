@@ -26,6 +26,7 @@ import static org.testng.Assert.assertTrue;
 public class TestDynamo {
 
   private static final String ACCESS_KEY = "ACCESS_KEY",
+      REGION = "REGION",
       SECRET_KEY = "SECRET_KEY";
   private TestDynamoMessage message;
 
@@ -40,6 +41,7 @@ public class TestDynamo {
     return new DynamoUrnFieldStore.Builder<TestDynamoMessage>()
         .setAccessKey(properties.getProperty(ACCESS_KEY))
         .setSecretKey(properties.getProperty(SECRET_KEY))
+        .setRegion(properties.getProperty(REGION))
         .setPrototype(TestDynamoMessage.newBuilder())
         .withSecondaryIndex("secondary")
         .build();

@@ -6,3 +6,4 @@ pom.xml.next
 release.properties
 .idea/*
 dynamo.iml
+src/test/resources/aws_credentials.properties

@@ -276,6 +276,16 @@ public class DynamoUrnFieldStore<T extends Message> implements CrudStore<T> {
       return this;
     }
 
+    public Builder<M> setRegion(Region region) {
+      region = region;
+      return this;
+    }
+
+    public Builder<M> setRegion(String regionName) {
+      region = Region.getRegion(Regions.fromName(regionName));
+      return this;
+    }
+
     public Builder<M> withSecondaryIndex(String fieldName)
         throws CrudException {
       for (FieldDescriptor field : result.prototype.getDescriptorForType().getFields()) {
